@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yönetim Paneli — Corenya Vanilla</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#2b1050" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1" />
+</head>
+<body data-page="admin">
+
+  <div id="site-header"></div>
+
+  <main class="admin-wrap">
+    <div class="container">
+
+      <section class="admin-login" id="loginView">
+        <div class="login-card card">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">
+              <svg viewBox="0 0 48 48" width="42" height="42" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="cvlogin" x1="8" y1="4" x2="42" y2="46" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#ff5aa8"/><stop offset="0.55" stop-color="#b06bff"/><stop offset="1" stop-color="#7c3aed"/>
+                  </linearGradient>
+                </defs>
+                <path d="M24 3.4 42.4 13.7v20.6L24 44.6 5.6 34.3V13.7L24 3.4Z" fill="url(#cvlogin)"/>
+                <path d="M24 13.6 34 18.9v10.2L24 34.4l-10-5.3V18.9l10-5.3Z" fill="#fff" fill-opacity="0.92"/>
+                <path d="M24 13.6v20.8M14 18.9l10 5.3 10-5.3" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="brand-text">
+              <strong>Corenya<span>Vanilla</span></strong>
+              <small>YÖNETİM PANELİ</small>
+            </span>
+          </a>
+          <h1>Tekrar hoş geldin 👋</h1>
+          <p>Başvuruları, siparişleri ve oyuncu verilerini yönetmek için giriş yap.</p>
+
+          <form id="loginForm" autocomplete="off">
+            <div class="field">
+              <label for="loginUser">Kullanıcı adı</label>
+              <input id="loginUser" name="username" value="admin" autocomplete="username" />
+            </div>
+            <div class="field">
+              <label for="loginPass">Şifre</label>
+              <input id="loginPass" name="password" type="password" placeholder="••••••••" autocomplete="current-password" />
+            </div>
+            <div id="loginError" class="store-notice danger" style="display:none;margin-top:12px"></div>
+            <button class="btn btn-primary btn-block mt-16" id="loginBtn" type="submit">Giriş Yap</button>
+          </form>
+
+          <div class="login-hint">
+            Demo giriş: <b>admin</b> / <b>corenya123</b><br />
+            Canlıya alırken <b>Ayarlar</b> bölümünden şifreyi değiştir.
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-shell" id="adminView" hidden>
+        <aside class="admin-side">
+          <div class="admin-brand">
+            <span class="brand-mark">
+              <svg viewBox="0 0 48 48" width="34" height="34" fill="none" aria-hidden="true">
+                <path d="M24 3.4 42.4 13.7v20.6L24 44.6 5.6 34.3V13.7L24 3.4Z" fill="#ff6fb5"/>
+                <path d="M24 13.6 34 18.9v10.2L24 34.4l-10-5.3V18.9l10-5.3Z" fill="#fff" fill-opacity="0.92"/>
+                <path d="M24 13.6v20.8M14 18.9l10 5.3 10-5.3" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>
+              <strong>Corenya Admin</strong>
+              <small>CONTROL CENTER</small>
+            </span>
+          </div>
+
+          <nav class="admin-nav" aria-label="Yönetim menüsü">
+            <button type="button" data-tab="dashboard" class="active"><span class="n-ico">📊</span> Genel Bakış</button>
+            <button type="button" data-tab="applications"><span class="n-ico">📨</span> Başvurular <span class="n-count" id="countApps" hidden></span></button>
+            <button type="button" data-tab="orders"><span class="n-ico">🛒</span> Siparişler <span class="n-count" id="countOrders" hidden></span></button>
+            <button type="button" data-tab="players"><span class="n-ico">👥</span> Oyuncular</button>
+            <button type="button" data-tab="products"><span class="n-ico">🏷️</span> Ürünler</button>
+            <button type="button" data-tab="settings"><span class="n-ico">⚙️</span> Ayarlar</button>
+          </nav>
+
+          <div class="admin-side-foot">
+            <div class="who"><span class="dot"></span> <span id="adminUser">admin</span></div>
+            <button class="btn btn-ghost btn-sm" type="button" id="logoutBtn">Çıkış Yap</button>
+          </div>
+        </aside>
+
+        <div class="admin-main">
+          <header class="admin-top">
+            <div>
+              <p class="eyebrow">YÖNETİM</p>
+              <h1 id="adminTitle">Genel Bakış</h1>
+              <p id="adminSub">Sunucunun nabzını buradan tut.</p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-ghost btn-sm" href="index.html">← Siteye dön</a>
+              <button class="btn btn-ghost btn-sm" type="button" id="refreshBtn">↻ Yenile</button>
+              <button class="btn btn-soft btn-sm" type="button" id="logoutBtn2">Çıkış</button>
+            </div>
+          </header>
+
+          <div class="admin-view" id="adminContent"></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="modalRoot"></div>
+
+  <script src="assets/js/api.js?v=1"></script>
+  <script src="assets/js/ui.js?v=1"></script>
+  <script src="assets/js/admin.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medya Başvurusu — Corenya Vanilla</title>
+  <meta name="description" content="Corenya Vanilla medya ekibi başvurusu: YouTube, Twitch, TikTok ve Kick içerik üreticileri için iş birliği." />
+  <meta name="theme-color" content="#ff5aa8" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1" />
+</head>
+<body data-page="media">
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">🎬 MEDYA</span>
+        <h1>İçerik üret, <span class="grad-text">birlikte büyüyelim</span></h1>
+        <p>YouTube, Twitch, TikTok, Instagram veya Kick'te Minecraft içeriği üretiyorsan medya ekibimize katıl. Sunucu tanıtımı, etkinlik yayınları ve karşılıklı büyüme için buradayız.</p>
+        <div class="hero-stats">
+          <div><strong>25+</strong><span>Medya üyesi</span></div>
+          <div><strong>1.000+</strong><span>Minimum takipçi</span></div>
+          <div><strong>48 saat</strong><span>Değerlendirme süresi</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container form-layout">
+        <div class="card form-card" id="mediaFormCard">
+          <h2>Medya başvurusu</h2>
+          <p>Kanalını ve içerik planını anlat. Ekibimiz profili inceleyip Discord üzerinden döner.</p>
+          <form id="mediaForm" autocomplete="off" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="mNick">Minecraft Nick <span class="req">*</span></label>
+                <input id="mNick" name="nick" maxlength="16" placeholder="OrnekOyuncu" />
+                <span class="err">Geçerli bir nick gir.</span>
+              </div>
+              <div class="field">
+                <label for="mDiscord">Discord Kullanıcı Adı <span class="req">*</span></label>
+                <input id="mDiscord" name="discord" maxlength="64" placeholder="kullaniciadi" />
+                <span class="err">Discord adını gir.</span>
+              </div>
+              <div class="field">
+                <label for="mPlatform">Platform <span class="req">*</span></label>
+                <select id="mPlatform" name="platform">
+                  <option value="">Platform seç…</option>
+                  <option value="youtube">YouTube</option>
+                  <option value="twitch">Twitch</option>
+                  <option value="tiktok">TikTok</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="kick">Kick</option>
+                  <option value="diger">Diğer</option>
+                </select>
+                <span class="err">Bir platform seç.</span>
+              </div>
+              <div class="field">
+                <label for="mFollowers">Takipçi / Abone <span class="req">*</span></label>
+                <input id="mFollowers" name="followers" type="number" min="0" step="1" placeholder="12000" />
+                <span class="err">Geçerli bir sayı gir.</span>
+              </div>
+              <div class="field full">
+                <label for="mChannel">Kanal Bağlantısı <span class="req">*</span></label>
+                <input id="mChannel" name="channel" maxlength="200" placeholder="https://youtube.com/@kanalin" />
+                <span class="err">http(s):// ile başlayan bir bağlantı gir.</span>
+              </div>
+              <div class="field full">
+                <label>İçerik Türü <span class="req">*</span></label>
+                <div class="choices">
+                  <input type="radio" id="ctVideo" name="contentType" value="video" checked /><label for="ctVideo">Uzun Video</label>
+                  <input type="radio" id="ctShorts" name="contentType" value="shorts" /><label for="ctShorts">Shorts / Reels</label>
+                  <input type="radio" id="ctYayin" name="contentType" value="yayin" /><label for="ctYayin">Canlı Yayın</label>
+                  <input type="radio" id="ctBlog" name="contentType" value="blog" /><label for="ctBlog">Blog / Yazı</label>
+                </div>
+              </div>
+              <div class="field full">
+                <label for="mAbout">Kendinden ve planından bahset <span class="req">*</span></label>
+                <textarea id="mAbout" name="about" maxlength="2500" placeholder="Ne tür içerikler üretiyorsun, ne sıklıkla paylaşıyorsun ve Corenya Vanilla için neler yapmayı planlıyorsun?"></textarea>
+                <span class="hint">En az 20 karakter. Örnek içerik linkleri eklemen değerlendirmeyi hızlandırır.</span>
+                <span class="err">En az 20 karakter yazmalısın.</span>
+              </div>
+            </div>
+
+            <label class="checkline mt-16">
+              <input type="checkbox" name="terms" />
+              <span>İçeriklerimin topluluk kurallarına uygun olacağını, reklam ve iş birliği şartlarını kabul ediyorum.</span>
+            </label>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Başvuruyu Gönder</button>
+              <span class="small muted">Değerlendirme: ~48 saat</span>
+            </div>
+          </form>
+        </div>
+
+        <aside class="side-stack">
+          <div class="card info-card">
+            <h3>✅ Aranan şartlar</h3>
+            <ul class="info-list">
+              <li><span class="ico">1</span><span>En az <b>1.000</b> takipçi / abone.</span></li>
+              <li><span class="ico">2</span><span>Minecraft ile ilgili düzenli içerik.</span></li>
+              <li><span class="ico">3</span><span>Son 30 günde en az 4 paylaşım.</span></li>
+              <li><span class="ico">4</span><span>Topluluk kurallarına uygun yayın geçmişi.</span></li>
+            </ul>
+          </div>
+
+          <div class="card info-card" style="background:linear-gradient(150deg,#fff6fb,#f4ecff)">
+            <h3>🎁 Medya ayrıcalıkları</h3>
+            <ul class="info-list">
+              <li><span class="ico">👑</span><span>Kalıcı <b>MEDYA</b> sohbet etiketi ve Discord rolü.</span></li>
+              <li><span class="ico">🎬</span><span>Etkinlik yayınlarında öncelik ve sahne erişimi.</span></li>
+              <li><span class="ico">💎</span><span>Aylık VIP Elmas paketi.</span></li>
+              <li><span class="ico">📈</span><span>Sunucu içi tanıtım ve kanal iş birliği.</span></li>
+            </ul>
+          </div>
+
+          <div class="card info-card">
+            <h3>🔎 Başvuru takip</h3>
+            <p class="small muted">Kodunla durumunu sorgula.</p>
+            <form id="trackForm" style="display:flex;gap:8px;margin-top:10px">
+              <input class="input" placeholder="MD-XXXX" maxlength="20" autocomplete="off" />
+              <button class="btn btn-soft btn-sm" type="submit">Sorgula</button>
+            </form>
+            <div id="trackResult" class="mt-8"></div>
+          </div>
+
+          <div class="card info-card">
+            <h3>🗂️ Başvurularım</h3>
+            <p class="small muted">Bu tarayıcıdan yaptığın son başvurular.</p>
+            <div id="myApps" class="mt-8"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="modalRoot"></div>
+
+  <script src="assets/js/api.js?v=1"></script>
+  <script src="assets/js/ui.js?v=1"></script>
+  <script src="assets/js/app.js?v=1"></script>
+</body>
+</html>

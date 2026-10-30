@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mağaza — Corenya Vanilla</title>
+  <meta name="description" content="Corenya Vanilla mağazası: VIP paketleri, efsanevi kasalar, Corenya Parası ve özel unvanlar." />
+  <meta name="theme-color" content="#ff5aa8" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1" />
+</head>
+<body data-page="store">
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">MAĞAZA</span>
+        <h1>Sunucuyu <span class="grad-text">destekle</span>, ayrıcalıkları kap.</h1>
+        <p>VIP paketleri, kasalar ve oyun içi kredi. Tüm gelirler sunucunun barınma ve geliştirme masraflarına gidiyor. Pay-to-win yok; sadece kozmetik ve konfor.</p>
+        <div class="hero-stats">
+          <div><strong>10+</strong><span>Ürün çeşidi</span></div>
+          <div><strong>~5 dk</strong><span>Ortalama teslimat</span></div>
+          <div><strong>%100</strong><span>Güvenli ödeme</span></div>
+          <div><strong>7/24</strong><span>Destek</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="store-toolbar">
+          <div class="filter-chips" id="filters">
+            <button class="chip active" type="button" data-filter="Tümü">Tümü</button>
+            <button class="chip" type="button" data-filter="VIP">VIP</button>
+            <button class="chip" type="button" data-filter="Kasa">Kasa</button>
+            <button class="chip" type="button" data-filter="Kredi">Kredi</button>
+            <button class="chip" type="button" data-filter="Unvan">Unvan</button>
+          </div>
+          <button class="btn btn-ghost cart-btn" type="button" id="openCart">
+            🛒 Sepet <span class="count" id="cartCount">0</span>
+          </button>
+        </div>
+
+        <div id="storeNotice"></div>
+        <div class="price-grid" id="productGrid">
+          <div class="empty-state" style="grid-column:1/-1">Ürünler yükleniyor…</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3>Ürünü seç</h3>
+            <p>VIP, kasa veya kredi. Sepete ekle, adetini ayarla.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3>Siparişi oluştur</h3>
+            <p>Minecraft nickini ve Discord adını yaz, ödeme yöntemini seç.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3>Teslimat</h3>
+            <p>Sipariş kodunu Discord'daki #destek kanalına yaz, dakikalar içinde teslim al.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <div class="card track-card">
+          <div>
+            <h3>Sipariş takibi</h3>
+            <p>Sipariş kodunla durumunu kontrol et.</p>
+          </div>
+          <form class="track-form" id="trackForm">
+            <input class="input" placeholder="CV-XXXXXX" maxlength="20" autocomplete="off" />
+            <button class="btn btn-primary" type="submit">Sorgula</button>
+          </form>
+          <div class="track-result" id="trackResult"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">ÖNEMLİ</span>
+            <h2 class="mt-8">Satın alma bilgileri</h2>
+          </div>
+        </div>
+        <div class="board-grid">
+          <article class="card" style="padding:22px">
+            <h3 style="font-size:1rem;margin-bottom:8px">🔐 Ödeme &amp; güvenlik</h3>
+            <p class="small muted">Ödemeler Papara, kredi/banka kartı veya havale ile alınır. Kart bilgileri sitemizde saklanmaz. Sipariş oluşturduğunda ödeme talimatları Discord üzerinden iletilir.</p>
+          </article>
+          <article class="card" style="padding:22px">
+            <h3 style="font-size:1rem;margin-bottom:8px">🎁 Teslimat &amp; iade</h3>
+            <p class="small muted">Dijital ürünlerde teslimat manuel yapılır ve genellikle 5 dakikayı geçmez. Teslim edilen dijital ürünlerde iade yapılamaz; sorun olursa destek ekibimize ulaş.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="modalRoot"></div>
+
+  <script src="assets/js/api.js?v=1"></script>
+  <script src="assets/js/ui.js?v=1"></script>
+  <script src="assets/js/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELO Sıralaması — Corenya Vanilla</title>
+  <meta name="description" content="Corenya Vanilla ELO sistemi: sezonluk sıralama, tier'lar, PvP istatistikleri ve ödüller." />
+  <meta name="theme-color" content="#ff5aa8" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1" />
+</head>
+<body data-page="elo">
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">⚔️ SEZONLUK ELO</span>
+        <h1>Her maç bir <span class="grad-text">basamak</span></h1>
+        <p>PvP arenasında kazandıkça yüksel, kaybettikçe düş. Sezon sonunda en yüksek ELO'ya ulaşan oyuncular özel ödüller ve kalıcı unvanlar kazanır.</p>
+        <div class="hero-stats">
+          <div><strong data-season>Sezon 4</strong><span>Aktif sezon</span></div>
+          <div><strong id="seasonEnd">—</strong><span>Sezon bitişi</span></div>
+          <div><strong>6</strong><span>Tier seviyesi</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <div class="podium" id="podium"></div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:14px">
+          <div>
+            <h2 style="font-size:1.15rem">Tier seviyeleri</h2>
+            <p class="small">ELO puanına göre otomatik atanır.</p>
+          </div>
+        </div>
+        <div class="feature-grid" id="tierLegend"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card table-card">
+          <div class="table-head">
+            <h3>Sezon sıralaması</h3>
+            <div class="table-tools">
+              <input class="input input-sm" id="playerSearch" placeholder="Oyuncu ara…" autocomplete="off" />
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Sıra</th>
+                  <th>Oyuncu</th>
+                  <th class="num">ELO</th>
+                  <th>Tier</th>
+                  <th class="num">G / M</th>
+                  <th class="num">Kazanma</th>
+                </tr>
+              </thead>
+              <tbody id="eloBody">
+                <tr><td colspan="6"><div class="empty-state">Yükleniyor…</div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card lookup">
+          <div>
+            <h3>ELO'nu sorgula</h3>
+            <p>Nickini yaz; tier ve ilerlemeni gör.</p>
+          </div>
+          <form class="track-form" id="lookupForm">
+            <input class="input" placeholder="Minecraft nickin" maxlength="16" autocomplete="off" />
+            <button class="btn btn-primary" type="submit">Sorgula</button>
+          </form>
+          <div class="lookup-result" id="lookupResult"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="board-grid">
+          <article class="card" style="padding:24px">
+            <h3 style="font-size:1.05rem;margin-bottom:8px">⚙️ Nasıl işliyor?</h3>
+            <ul class="info-list">
+              <li><span class="ico">1</span><span><b>Kazanç:</b> Rakibinden daha yüksek ELO'ya sahipsen daha az puan kazanırsın.</span></li>
+              <li><span class="ico">2</span><span><b>Kayıp:</b> Düşük ELO'lu rakibe kaybetmek daha çok puan kaybettirir.</span></li>
+              <li><span class="ico">3</span><span><b>Koruma:</b> VIP Altın ve üzeri paketlerde haftalık ELO koruması vardır.</span></li>
+              <li><span class="ico">4</span><span><b>Sıfırlama:</b> Sezon sonunda ELO'lar yumuşak sıfırlanır, ilk 10 korunur.</span></li>
+            </ul>
+          </article>
+          <article class="card" style="padding:24px">
+            <h3 style="font-size:1.05rem;margin-bottom:8px">🎁 Sezon ödülleri</h3>
+            <ul class="info-list">
+              <li><span class="ico">🥇</span><span><b>#1:</b> Kalıcı "Efsane" unvanı + 2.000 CP + özel kozmetik.</span></li>
+              <li><span class="ico">🥈</span><span><b>#2:</b> 1.200 CP + sezon kozmetiği.</span></li>
+              <li><span class="ico">🥉</span><span><b>#3:</b> 750 CP + sezon kozmetiği.</span></li>
+              <li><span class="ico">🎟️</span><span><b>İlk 20:</b> Efsanevi Kasa x2 ve Discord rolü.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="modalRoot"></div>
+
+  <script src="assets/js/api.js?v=1"></script>
+  <script src="assets/js/ui.js?v=1"></script>
+  <script src="assets/js/app.js?v=1"></script>
+</body>
+</html>

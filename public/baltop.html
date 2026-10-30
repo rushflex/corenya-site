@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baltop — Corenya Vanilla</title>
+  <meta name="description" content="Corenya Vanilla Baltop sıralaması: en zengin oyuncular, Corenya Parası bakiyeleri ve oyun süreleri." />
+  <meta name="theme-color" content="#ff5aa8" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1" />
+</head>
+<body data-page="baltop">
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">💰 BAKİYE SIRALAMASI</span>
+        <h1>Baltop <span class="grad-text">zirvesi</span></h1>
+        <p>Sunucudaki en zengin oyuncular. Corenya Parası (CP); ticaret, etkinlikler, kasa açılışları ve oyun içi görevlerle kazanılır.</p>
+        <div class="hero-stats">
+          <div><strong><span id="totalPlayers">—</span></strong><span>Listelenen oyuncu</span></div>
+          <div><strong><span id="totalMoney">—</span></strong><span>Toplam CP</span></div>
+          <div><strong><span id="topMoney">—</span></strong><span>En yüksek bakiye</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="podium" id="podium"></div>
+
+        <div class="card table-card">
+          <div class="table-head">
+            <h3>Tüm sıralama</h3>
+            <div class="table-tools">
+              <input class="input input-sm" id="playerSearch" placeholder="Oyuncu ara…" autocomplete="off" />
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Sıra</th>
+                  <th>Oyuncu</th>
+                  <th class="num">Bakiye</th>
+                  <th class="num">Oyun süresi</th>
+                  <th>Tier</th>
+                  <th class="num">ELO</th>
+                </tr>
+              </thead>
+              <tbody id="baltopBody">
+                <tr><td colspan="6"><div class="empty-state">Yükleniyor…</div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card lookup">
+          <div>
+            <h3>Kendi sıranı bul</h3>
+            <p>Nickini yaz, bakiye ve ELO bilgini gör.</p>
+          </div>
+          <form class="track-form" id="lookupForm">
+            <input class="input" placeholder="Minecraft nickin" maxlength="16" autocomplete="off" />
+            <button class="btn btn-primary" type="submit">Bul</button>
+          </form>
+          <div class="lookup-result" id="lookupResult"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">TAKTİK</span>
+            <h2 class="mt-8">Baltop'ta yükselmenin yolları</h2>
+            <p>Zenginlik tesadüf değil; biraz ticaret, biraz sabır.</p>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="f-icon">🌾</div>
+            <h3>Çiftlik kur</h3>
+            <p>Büyük ölçekli çiftliklerle pasif gelir elde et, ürünleri pazarda sat.</p>
+          </div>
+          <div class="feature">
+            <div class="f-icon">🏪</div>
+            <h3>Ticaret yap</h3>
+            <p>Oyuncuların ihtiyaç duyduğu eşyaları üret ve pazar alanında sat.</p>
+          </div>
+          <div class="feature">
+            <div class="f-icon">🎁</div>
+            <h3>Kasa aç</h3>
+            <p>Efsanevi kasalardan CP, nadir eşya ve ELO puanı çıkabilir.</p>
+          </div>
+          <div class="feature">
+            <div class="f-icon">🏆</div>
+            <h3>Etkinliklere katıl</h3>
+            <p>Haftalık etkinliklerde ödül havuzundan pay al.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="modalRoot"></div>
+
+  <script src="assets/js/api.js?v=1"></script>
+  <script src="assets/js/ui.js?v=1"></script>
+  <script src="assets/js/app.js?v=1"></script>
+</body>
+</html>

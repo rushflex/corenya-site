@@ -1,0 +1,8 @@
+# Corenya Vanilla - Caddy ters proxy (otomatik HTTPS)
+# Kullanim: Caddy servisi bu dosyayi okur (install-caddy.ps1 bunu kurar)
+# Elle calistirmak icin: tools\caddy.exe run --config deploy\windows\Caddyfile
+
+corenyavanilla.com, www.corenyavanilla.com {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3000
+}

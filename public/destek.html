@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destek Başvurusu — Corenya Vanilla</title>
+  <meta name="description" content="Corenya Vanilla destek sistemi: hata bildirimi, eşya kaybı, oyuncu şikayeti ve ceza itirazı başvuruları." />
+  <meta name="theme-color" content="#ff5aa8" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1" />
+</head>
+<body data-page="support">
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">🛟 DESTEK</span>
+        <h1>Yardıma mı ihtiyacın <span class="grad-text">var?</span></h1>
+        <p>Bir hata, kayıp eşya, hile şüphesi veya ceza itirazı… Formu doldur, başvuru kodunla süreci takip et. Ekibimiz her talebi tek tek inceliyor.</p>
+        <div class="hero-stats">
+          <div><strong>~2 saat</strong><span>Ortalama ilk yanıt</span></div>
+          <div><strong>7/24</strong><span>Talep kabulü</span></div>
+          <div><strong>%98</strong><span>Çözüm oranı</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container form-layout">
+        <div class="card form-card" id="supportFormCard">
+          <h2>Destek talebi oluştur</h2>
+          <p>Alanları dikkatli doldur; eksik bilgi süreci uzatır.</p>
+          <form id="supportForm" autocomplete="off" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="sNick">Minecraft Nick <span class="req">*</span></label>
+                <input id="sNick" name="nick" maxlength="16" placeholder="OrnekOyuncu" />
+                <span class="err">Geçerli bir nick gir.</span>
+              </div>
+              <div class="field">
+                <label for="sDiscord">Discord Kullanıcı Adı <span class="req">*</span></label>
+                <input id="sDiscord" name="discord" maxlength="64" placeholder="kullaniciadi" />
+                <span class="err">Discord adını gir.</span>
+              </div>
+              <div class="field">
+                <label for="supportCategory">Kategori <span class="req">*</span></label>
+                <select id="supportCategory" name="category">
+                  <option value="">Kategori seç…</option>
+                </select>
+                <span class="err">Bir kategori seç.</span>
+              </div>
+              <div class="field">
+                <label>Öncelik</label>
+                <div class="choices">
+                  <input type="radio" id="pNormal" name="priority" value="normal" checked /><label for="pNormal">Normal</label>
+                  <input type="radio" id="pHigh" name="priority" value="high" /><label for="pHigh">Yüksek</label>
+                  <input type="radio" id="pUrgent" name="priority" value="urgent" /><label for="pUrgent">Acil</label>
+                </div>
+              </div>
+              <div class="field full">
+                <label for="sSubject">Konu <span class="req">*</span></label>
+                <input id="sSubject" name="subject" maxlength="120" placeholder="Örn. Envanterimdeki eşyalar kayboldu" />
+                <span class="err">Konu en az 5 karakter olmalı.</span>
+              </div>
+              <div class="field full">
+                <label for="sMessage">Mesajın <span class="req">*</span></label>
+                <textarea id="sMessage" name="message" maxlength="2500" placeholder="Sorunu, ne zaman olduğunu ve varsa ekran görüntüsü / saat bilgisini yaz…"></textarea>
+                <span class="hint">En az 20 karakter. Ne kadar detay, o kadar hızlı çözüm.</span>
+                <span class="err">En az 20 karakter yazmalısın.</span>
+              </div>
+            </div>
+
+            <label class="checkline mt-16">
+              <input type="checkbox" name="terms" />
+              <span>Başvurumun doğru bilgiler içerdiğini, yanlış beyanın ceza ile sonuçlanabileceğini ve <a href="index.html" style="color:var(--purple-600)">sunucu kurallarını</a> kabul ediyorum.</span>
+            </label>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Başvuruyu Gönder</button>
+              <span class="small muted">Ortalama yanıt süresi: ~2 saat</span>
+            </div>
+          </form>
+        </div>
+
+        <aside class="side-stack">
+          <div class="card info-card">
+            <h3>📋 Başvuru kuralları</h3>
+            <ul class="info-list">
+              <li><span class="ico">✓</span><span>Her başvuru tek konu içermeli.</span></li>
+              <li><span class="ico">✓</span><span>Hile şikayetlerinde video kanıtı ekle.</span></li>
+              <li><span class="ico">✓</span><span>Aynı konuda tekrar başvuru açma.</span></li>
+              <li><span class="ico">✓</span><span>Küfür ve hakaret içeren talepler reddedilir.</span></li>
+            </ul>
+          </div>
+
+          <div class="card info-card">
+            <h3>🔎 Başvuru takip</h3>
+            <p class="small muted">Kodunla durumunu sorgula.</p>
+            <form id="trackForm" style="display:flex;gap:8px;margin-top:10px">
+              <input class="input" placeholder="DS-XXXX" maxlength="20" autocomplete="off" />
+              <button class="btn btn-soft btn-sm" type="submit">Sorgula</button>
+            </form>
+            <div id="trackResult" class="mt-8"></div>
+          </div>
+
+          <div class="card info-card">
+            <h3>🗂️ Başvurularım</h3>
+            <p class="small muted">Bu tarayıcıdan yaptığın son başvurular.</p>
+            <div id="myApps" class="mt-8"></div>
+          </div>
+
+          <div class="card info-card" style="background:var(--purple-50)">
+            <h3>💬 Discord</h3>
+            <p class="small muted">Acil durumlarda Discord sunucumuzdaki #destek kanalını kullanabilirsin.</p>
+            <a class="btn btn-primary btn-sm btn-block mt-8" href="https://discord.gg/corenya" data-discord target="_blank" rel="noopener">Discord'a Katıl</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="modalRoot"></div>
+
+  <script src="assets/js/api.js?v=1"></script>
+  <script src="assets/js/ui.js?v=1"></script>
+  <script src="assets/js/app.js?v=1"></script>
+</body>
+</html>
